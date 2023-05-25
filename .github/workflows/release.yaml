@@ -1,0 +1,19 @@
+name: Release
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+
+jobs:
+  release-container:
+    uses: radiorabe/actions/.github/workflows/release-container.yaml@v0.11.0
+    with:
+      image: ghcr.io/radiorabe/kafka
+      name: kafka
+      display-name: RaBe Kafka on UBI9
+      tags: minimal rhel9 ubi9 rabe kafka
+      cosign-base-image-only: true
