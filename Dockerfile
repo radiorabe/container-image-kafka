@@ -21,6 +21,10 @@ RUN    microdnf install -y \
     && microdnf clean all \
     && sed \
          --in-place \
+         --expression='s/log4j.rootLogger=INFO, stdout, kafkaAppender/log4j.rootLogger=INFO, stdout/' \
+         config/log4j.properties \
+    && sed \
+         --in-place \
          --expression='s/log4j.rootLogger=INFO, stdout, connectAppender/log4j.rootLogger=INFO, stdout/' \
          config/connect-log4j.properties
 
