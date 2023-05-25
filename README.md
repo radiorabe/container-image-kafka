@@ -1,4 +1,4 @@
-# RaBe MinIO Image
+# RaBe Kafka Image
 
 [Kafka](https://kafka.apache.org) container image based on [RaBe UBI9 Minimal](https://github.com/radiorabe/container-image-ubi9-minimal)
 with a `kafka` binary from the `quay.io/strimzi/kafka` image.
