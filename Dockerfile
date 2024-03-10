@@ -12,6 +12,7 @@ WORKDIR /opt/kafka
 
 RUN    microdnf install -y \
          shadow-utils \
+         hostname \
          java-${JAVA_VERSION}-openjdk-headless \
     && useradd -u 1001 -r -g 0 -s /sbin/nologin \
          -c "Default Application User" default \
