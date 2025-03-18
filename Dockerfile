@@ -1,5 +1,5 @@
-FROM quay.io/strimzi/kafka:latest-kafka-3.9.0 AS source
-FROM ghcr.io/radiorabe/ubi9-minimal:0.8.1 AS app
+FROM quay.io/strimzi/kafka:latest-kafka-4.0.0 AS source
+FROM ghcr.io/radiorabe/ubi9-minimal:0.8.2 AS app
 
 COPY --from=source /opt /opt
 
