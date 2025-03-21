@@ -19,16 +19,7 @@ RUN    microdnf install -y \
     && microdnf remove -y \
          libsemanage \
          shadow-utils \
-    && microdnf clean all \
-    && sed \
-         --in-place \
-         --expression='s/log4j.rootLogger=INFO, stdout, kafkaAppender/log4j.rootLogger=INFO, stdout/' \
-         config/log4j.properties \
-    && sed \
-         --in-place \
-         --expression='s/log4j.rootLogger=INFO, stdout, connectAppender/log4j.rootLogger=INFO, stdout/' \
-         config/connect-log4j.properties
+    && microdnf clean all
 
-VOLUME /tmp/kraft-combined-logs
-VOLUME /tmp/kafka-logs
+VOLUME /opt/kafka/logs
 USER 1001
