@@ -1,4 +1,4 @@
-FROM quay.io/strimzi/kafka:latest-kafka-4.4.0@sha256:86335b38bbb437e9eaa77ada805f4b835c01848b85263a856d4d707f81373ea6 AS source
+FROM quay.io/strimzi/kafka:latest-kafka-4.4.0@sha256:9cd3bf84c2ee57e6261358cc8664a1f1f6e2257a15e32b596dffff8224ee23a3 AS source
 FROM ghcr.io/radiorabe/ubi9-minimal:0.12.1@sha256:9a3f83629f9dd656727266b28ceb962824a337c34dab911ff4f0fce75acea642 AS app
 
 COPY --from=source /opt /opt
